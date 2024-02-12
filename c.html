@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+</head>
+<style>
+    body{
+        height: 300px;
+        width: 250px;
+        border: 1px solid aqua;
+        margin:auto;
+        background-color:black;
+        padding: 5px;
+        border-radius: 10px;
+        padding-bottom: 50px;
+    }
+    .text{
+        height: 30px;
+        width: 243px;
+        border: 1px solid aqua;
+        background-color: black;
+        border-radius: 5px;
+        color: white;
+        text-align: right;
+        font-size: xx-large;   
+    }
+    .btn1{
+        height: 40px;
+        width: 40px;
+        border: 1px solid aqua;
+        border-radius: 40px;
+        color: aliceblue;
+        background-color: rgb(34, 32, 32);
+        cursor: pointer;
+        
+    }
+    .btn2{
+        height: 40px;
+        width: 40px;
+        border: 1px solid aqua;
+        border-radius: 40px;
+        cursor: pointer;
+        
+    }
+    .btn3{
+        height: 40px;
+        width: 40px;
+        border: 1px solid aqua;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+    .btn4{
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+    .btn7{
+        
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+    .btn8
+        {
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 40px;
+        cursor: pointer; 
+    }
+    .btn9
+        {
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 40px;
+    }
+    .btnm
+        {
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+    .btn
+        {
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+    .btnc{
+        background-color: darkgrey;
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 40px;
+        cursor: pointer;
+    }
+    .btnequal{
+        background-color:orangered;
+        height: 40px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 40px;
+        color: aliceblue;
+        font-size: larger;
+        cursor: pointer;
+    }
+
+</style>
+<body>
+    <input type="text"  class="text"  placeholder="0" id="inputbox"><br><br>
+    <div class="all">
+    <div class="button1" >&nbsp;&nbsp;&nbsp;
+        <button class="btnc">C</button>&nbsp;&nbsp;&nbsp;
+        <button class="btnc">%</button>&nbsp;&nbsp;&nbsp;
+        <button class="btnc"> DEL</button>&nbsp;&nbsp;&nbsp;
+        <button class="btnc">\</button>
+    </div><br>
+    <div>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">7</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">8</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">9</button>&nbsp;&nbsp;&nbsp;
+        <button class="btnc">*</button>
+    </div><br>
+    <div>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">4</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">5</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">6</button>&nbsp;&nbsp;&nbsp;
+        <button class="btnc">-</button>
+    </div><br>
+    <div>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">1</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">2</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">3</button>&nbsp;&nbsp;&nbsp;
+        <button class="btnc">+</button>
+    </div><br>
+    <div>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">00</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">0</button>&nbsp;&nbsp;&nbsp;
+        <button class="btn1">.</button>&nbsp;&nbsp;&nbsp;
+        <button class="btnequal">=</button>
+    </div>
+    </button>
+    </div>
+    <script>
+     let input = document.getElementById("inputbox");
+     let buttons = document.querySelectorAll('button');
+
+     let string = "";
+     let arr = Array.from(buttons);
+     arr.forEach(button =>{
+        button.addEventListener('click',(e) =>{
+            if(e.target.innerHTML == '='){
+                string = eval(string);
+                input.value = string;
+            }
+             else if(e.target.innerHTML == 'C'){
+                string = "";
+                input.value = string;
+             }
+             else if(e.target.innerHTML == 'DEL'){
+                string = string.substring(0, string. length-1);
+                input.value = string;
+             }
+            else{
+            string += e.target.innerHTML;
+            input.value = string;
+            }
+            if (e.target.innerHTML == 'DEL') {
+                string += e.target.innerHTML;
+                input.value = string;
+            } 
+        })
+     })
+    </script>
+</body>
+</html>
